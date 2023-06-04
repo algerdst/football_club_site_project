@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="try_free_class">
+        <h2 class="try_free_class_h2">Научим ребенка играть в футбол</h2>
+        <h1 class="try_free_class_h1">Запишитесь на бесплатное пробное занятие</h1>
+        <a class="send_application" id="open_form" style="cursor: pointer">ОСТАВИТЬ ЗАЯВКУ</a>
+    </div>
+    <div class="about_football_school">
+        <div class="about_football_school_header">
+            <h1 style="font-size: 3em;text-align: center">О футбольной школе</h1>
+            <h3 style="text-align: center; width: 40%">«Симбирские Львы Kid's» — детская футбольная школа в Ульяновске.
+                Мы предоставляем качественный уровень
+                тренировок и прививаем любовь к футболу.</h3>
+        </div>
+        <div class="about_football_school_paragraphs">
+            {% for paragraph in paragraphs %}
+                <div class="paragraph">
+                    <img src="{{ paragraph.image.url }}" width="80em" alt="">
+                    <h3>{{ paragraph.title }}</h3>
+                    <p style="text-align: center">{{ paragraph.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="try_free_class cls2">
+        <h1 class="try_free_class_h1">Уже через 1 месяц ваш ребенок будет играть в футбол лучше, чем 99% его
+            ровесников</h1>
+        <a class="send_application" id="open_forma" style="cursor: pointer">ОСТАВИТЬ ЗАЯВКУ</a>
+    </div>
+    <div class="trains">
+        <h1 style="font-size: 3em">Тренировки</h1>
+        <div class="kind_of_trains">
+            {% for train in trains %}
+                <div class="train">
+                    <div class="train_img">
+                        <img src="{{ train.image.url }}" width="100%" height="100%" alt="">
+                    </div>
+                    <h1 style="font-size: 1.3em; text-align: center">{{ train.title }}</h1>
+                    <p style="padding-right: 1em; padding-left: 1em; text-align: center">{{ train.description }}</p>
+                    <a href="{% url 'trains' %}"
+                       style="padding: 1em;background-color: #252B34; font-weight: 600;color: white">ПОДРОБНЕЕ</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="contact_with_us">
+        <h1 style="font-size: 3em">Cвяжитесь с нами</h1>
+        <div class="index_contacts">
+            <div class="contact">
+                <h2>Адрес школы</h2>
+                <h1>г.Ульяновск, Проспект Гая 15 </h1>
+            </div>
+            <div class="contact">
+                <h2>Телефон</h2>
+                <h1>+7 (904) 194 94 74</h1>
+            </div>
+            <div class="contact">
+                <h2>E-mail</h2>
+                <h1>simlion@inbox.com</h1>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative;overflow:hidden;"><a
+            href="https://yandex.by/maps/195/ulyanovsk/?utm_medium=mapframe&utm_source=maps"
+            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ульяновск</a><a
+            href="https://yandex.by/maps/195/ulyanovsk/house/prospekt_gaya_15/YEEYdQRgTUIBQFtufX53eX5hYA==/?ll=48.330476%2C54.268224&utm_medium=mapframe&utm_source=maps&z=16.48"
+            style="color:#eee;font-size:12px;position:absolute;top:14px;">Проспект Гая, 15 — Яндекс Карты</a>
+        <iframe src="https://yandex.by/map-widget/v1/?ll=48.330476%2C54.268224&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Nzc1MTcwNRI90KDQvtGB0YHQuNGPLCDQo9C70YzRj9C90L7QstGB0LosINC_0YDQvtGB0L_QtdC60YIg0JPQsNGPLCAxNSIKDWhSQUIVqRJZQg%2C%2C&z=16.48"
+                width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+    </div>
+{% endblock %}
+
+{% block block_script %}
+
+{% endblock %}

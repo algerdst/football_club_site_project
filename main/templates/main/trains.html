@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+    <div class="about_school about_trains">
+        <h1 style="font-size: 3.5em; font-weight: 700; color: white"> О школе</h1>
+    </div>
+    <div class="trains_block">
+        {% for train in trains %}
+            <div class="kind_of_trains_box">
+                <div style="max-width: 50%"></div>
+                <img src="{{ train.image.url }}" style="height: auto;width: auto; object-fit: cover" alt="">
+                <div class="description_kind_of_trains">
+                    <h1>{{ train.title }}</h1>
+                    <h2>{{ train.price }}</h2>
+                    <p style="font-weight: 600; color: #242b35">{{ train.description }}</p>
+                    <ul style="margin-left: 0">
+                        <li><span>{{ train.age }}</span></li>
+                        <li><span>{{ train.duration }}</span></li>
+                        <li><span>{{ train.frequency }}</span></li>
+                        <li><span>{{ train.cost_of_first_train }}</span></li>
+                    </ul>
+                    <a class="send_application" id="open_form"
+                       style="cursor: pointer; font-size: 1em; width: 60%; text-align: center">ОСТАВИТЬ ЗАЯВКУ</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="about_football_school" style="margin-top: -2em">
+        <div class="about_football_school_header">
+            <h1 style="font-size: 3em;text-align: center">Методика обучения</h1>
+        </div>
+        <div class="about_football_school_paragraphs">
+            <div class="paragraph">
+                <img src="{% static 'img/1.png' %}" width="80em" alt="">
+                <h3>3-4 лет</h3>
+                <p style="text-align: center">Обучение детей базовым основам футбола. Упражнения на развитие координации
+                    и скорости. Укрепление здоровья ребенка.</p>
+            </div>
+            <div class="paragraph">
+                <img src="{% static 'img/2.png' %}" width="80em" alt="">
+                <h3>4-5 лет</h3>
+                <p style="text-align: center">Обучение начальным принципам игры в футбол, упражнения на развитие
+                    координации и скорости. Обучение работе в команде.</p>
+            </div>
+            <div class="paragraph">
+                <img src="{% static 'img/3.png' %}" width="80em" alt="">
+                <h3>5-7 лет</h3>
+                <p style="text-align: center">Развитие скорости и выносливости. Обучение продвинутым навыкам в атаке и
+                    обороне. Закрепление базовых навыков.</p>
+            </div>
+        </div>
+        <a class="send_application" id="open_form"
+           style="cursor: pointer; font-size: 1em; width: 60%; text-align: center">ПОПРОБОВАТЬ БЕСПЛАТНО</a>
+    </div>
+    <div class="schedule_block">
+        <h1 style="text-align: center; font-size: 3em">Расписание групповых тренировок</h1>
+        <table>
+            <thead>
+            <tr>
+                <td><h3>ГРУППЫ</h3></td>
+                <td><h3>ДНИ НЕДЕЛИ</h3></td>
+                <td><h3>ВРЕМЯ</h3></td>
+                <td><h3>ТРЕНЕР</h3></td>
+                <td><h3 style="visibility:hidden;">ТРЕНЕР</h3></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for schedule in schedules %}
+                <tr>
+                    <td>{{ schedule.group_ages }}</td>
+                    <td>{{ schedule.days }}</td>
+                    <td>{{ schedule.time }}</td>
+                    <td>{{ schedule.coach_name }}</td>
+                    <td><a class="send_application" id="open_form"
+                           style="cursor: pointer; font-size: 0.7em; width: 60%; text-align: center">ЗАПИСАТЬСЯ</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="contact_with_us_form contact_with_us_form_trains">
+        <h1 style="font-size: 3em; color: white">Напишите нам</h1>
+        <h2 style="color: white">Мы всегда готовы ответить на ваши вопросы</h2>
+        <form action="" class="contact_form" method="post">
+            {% csrf_token %}
+            {{ form.name|add_class:"form_field" }}
+            {{ form.phone|add_class:"form_field" }}
+            {{ form.email|add_class:"form_field" }}
+            {{ form.description|add_class:"form_field" }}
+            <button>Отправить</button>
+        </form>
+    </div>
+{% endblock %}

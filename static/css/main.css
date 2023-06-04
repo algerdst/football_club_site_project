@@ -1,0 +1,359 @@
+body {
+    margin: 0;
+    color: #252B34;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Wix Madefor Text', sans-serif;
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    color: #db5e24;
+}
+
+header {
+    padding: 1.5em;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    margin: 1em 5em 1em 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_a {
+    font-size: 1em;
+    margin: 0.5em;
+    color: #252B34;
+    font-weight: 700;
+}
+
+.nav_a:hover {
+    border-bottom: 2px solid #db5e24;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 5em;
+    bottom: 0;
+}
+
+.footer_descr {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_contacts {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.try_free_class{
+    background-image: url('../img/trenirovka.jpg');
+    background-size: cover;
+    height: 10em;
+    padding-top: 13em;
+    padding-bottom: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.try_free_class_h1{
+    color: white;
+    font-size: 3em;
+    width: 50%;
+    text-align: center;
+}
+
+.try_free_class_h2{
+    color: white;
+    font-size: 2em;
+}
+
+.send_application{
+    width: 10em;
+    font-size: 1.5em;
+    padding: 1em;
+    color: white;
+    font-weight: 600;
+    background-color: #db5e24;
+    margin-top: 2em;
+}
+
+.send_application:hover{
+    background-color: #242b35;
+    transition: 0.5s;
+    color: white;
+}
+
+.about_football_school{
+    margin: 5em 5em 5em 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about_football_school_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_football_school_paragraphs{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.paragraph{
+    width: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 2em 2em 2em;
+    margin-bottom: 2em;
+}
+
+.try_free_class.cls2{
+    background-image: url('../img/trenirovka2.jpg');
+}
+
+.trains{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 5em 2em 5em;
+
+}
+
+.kind_of_trains{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+}
+
+.train{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    margin-right: 2em;
+    margin-left: 2em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 1em;
+}
+
+.train_img{
+    width: 100%;
+    height: 100%;
+}
+
+.contact_with_us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 5em 5em 5em;
+}
+
+.index_contacts{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_school{
+    height: 20em;
+    background-image: url('../img/training_about.jpg');
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coaches{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5em 5em 5em;
+}
+
+.coaches_info{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.coach{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.about_school.contacts{
+    background-image: url('../img/ball.jpg');
+    background-position: center;
+}
+
+.contacts_block{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5em;
+    margin-left: 5em;
+    margin-bottom: 5em;
+}
+
+.contact_info{
+    margin-right: 1em;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact_map{
+    width: 60%;
+}
+
+.contact_with_us_form{
+    background-image: url('../img/field.jpg');
+    background-position: center;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    padding-top: 3em;
+}
+
+.about_trains {
+    height: 20em;
+    background-image: url('../img/ball2.jpg');
+}
+
+.trains_block{
+    width: 80%;
+    margin: 0 5em 5em 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.kind_of_trains_box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+
+.description_kind_of_trains{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+ul li {
+    font-size: 16px;
+    color: #db5e24;
+    font-weight: 600;
+}
+
+li span {
+  color: #252B34;
+}
+
+.schedule_block{
+    margin: 0 0 5em 0;
+    padding: 5em;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.schedule_row{
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-around;
+}
+
+.schedule_row:hover{
+    background-color: lightslategray;
+}
+
+table{
+    text-align: center;
+    border: 1px solid rgba(138, 132, 132, 0.3);
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: rgba(138, 132, 132, 0.3);
+}
+
+thead:hover{
+    background-color: rgba(138, 132, 132, 0.3);
+}
+
+tr:hover{
+    background-color: rgba(138, 132, 132, 0.2);
+}
+
+tr{
+    padding: 1em;
+}
+
+td{
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.contact_with_us_form_trains{
+    background-image: url("../img/ball3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}

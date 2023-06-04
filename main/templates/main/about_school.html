@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block block_for_css %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="about_school">
+        <h1 style="font-size: 3.5em; font-weight: 700; color: white"> О школе</h1>
+    </div>
+    <h1 style="text-align: center; margin-left: 5em; margin-right: 5em; margin-bottom: 3em">«Симбирские Львы Kid's» —
+        детская футбольная школа в Ульяновск. Мы предоставляем качественный уровень тренировок
+        и прививаем любовь к футболу.</h1>
+    <div class="coaches">
+        <h1>Тренерский состав</h1>
+        <h2 style="text-align: center ">Все тренеры обладают профильным образованием, отличаются особым подходом к
+            тренировкам и футболу.</h2>
+        <div class="coaches_info">
+            {% for coach in coaches %}
+                <div class="coach">
+                    <img src="{{ coach.photo.url }}" alt="">
+                    <h2 style="text-align: center">{{ coach.name }}</h2>
+                    <p style="text-align: center; font-weight: 600">{{ coach.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="" style="padding: 1.5em; background-color: #db5e24; color: white;font-weight: 600; font-size: 1.3em">Расписание
+            тренировок</a>
+    </div>
+    <div class="coaches"
+         style="background-color: #242b35;margin-left: 0; margin-right: 0; padding-left: 5em;padding-right: 5em">
+        <h1 style="font-size: 3em; color: white">Результаты учеников</h1>
+        <div class="coaches_info">
+            {% for student in students %}
+                <div class="coach" style="background-color: white; padding: 0.2em;margin-bottom: 5em">
+                    <img src="{{ student.photo.url }}" alt="">
+                    <h2 style="text-align: center;">{{ student.name }}</h2>
+                    <p style="text-align: center; font-weight: 600">{{ student.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 2.5em">Галерея</h1>
+        <h2 style="text-align: center">Фото команды «Симбирские львы Kid's» </h2>
+        <div class="img-container">
+            {% for picture in pictures %}
+                <div class="img">
+                    <img src="{{ picture.image.url }}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pop-up">
+            <span>&times;</span>
+            <img src="{{ picture.image.url }}" alt="">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.img-container img').forEach(img =>{
+           img.onclick = () => {
+               document.querySelector('.pop-up').style.display = 'block';
+               document.querySelector('.pop-up img').src = img.getAttribute('src');
+           }
+        });
+        document.querySelector('.pop-up span').onclick = () => {
+            document.querySelector('.pop-up').style.display = 'none';
+        }
+
+    </script>
+{% endblock %}

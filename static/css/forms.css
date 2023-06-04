@@ -1,0 +1,140 @@
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 2em;
+}
+
+.form_field {
+    margin-bottom: 1em;
+    height: 3.5em;
+}
+
+input::-webkit-input-placeholder {
+    color: grey;
+}
+input:-moz-placeholder {
+    color: grey;
+}
+
+button {
+    width: 30%;
+    height: 20%;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #252B34;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #db5e24;
+    transition: 0.5s;
+}
+
+.footer_field{;
+    background-color: black;
+    margin-bottom: 1em;
+    height: 3.5em;
+    width: 100%;
+}
+
+:focus.footer_field{
+    border: 1px solid white;
+}
+
+.contact_form_footer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 2em;
+}
+
+.button_footer{
+    width: 50%;
+    background-color: #db5e24;
+}
+
+.button_footer:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.modal_window{
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(37,43,52,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+
+}
+
+.modal_window.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_form{
+    max-height: 400px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1.5em;
+    background-color: white;
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.modal_window.open .modal_form{
+    transform: scale(1);
+}
+
+.btn_close{
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    padding: 0;
+    width: 15px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.btn_close:hover{
+    opacity: 1;
+    background-color: white;
+}
+
+.pop_up_field{;
+    background-color: white;
+    border: 2px solid rgba(138, 134, 134,0.6);
+    border-radius: 10px;
+    margin-bottom: 1em;
+    height: 3.5em;
+    width: 100%;
+}
+
+:focus.pop_up_field{
+    border: 1px solid rgba(23, 14, 201, 0.6);
+}
+
+.button_pop_up_field{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(29, 207, 88);
+    height: 3em;
+    margin-top: 1em;
+    border-radius: 10px;
+}

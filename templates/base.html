@@ -1,0 +1,98 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    {% block block_for_css %}
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;600;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<header>
+    <a href="">г. Ульяновск, ул. Проспект Гая, 15</a>
+    <a href="">+8 (904) 194 94 74</a>
+    <a href="">simlion@inbox.com</a>
+    <a href="https://vk.com/simlionkids"><img src="{% static 'img/vk.png' %}" alt="" width="20em"></a>
+</header>
+<nav>
+    <a href="{% url 'home' %}"><img src="{% static 'img/logo.JPG' %}" alt="" width="350em"></a>
+    <div class="nav_bar">
+        <a href="{% url 'home' %}" class="nav_a">ГЛАВНАЯ</a>
+        <a href="{% url 'about' %}" class="nav_a">О ШКОЛЕ</a>
+        <a href="{% url 'trains' %}" class="nav_a">ТРЕНИРОВКИ</a>
+        <a href="{% url 'contacts' %}" class="nav_a">КОНТАКТЫ</a>
+    </div>
+</nav>
+<div class="modal_window" id="my_modal">
+    <form action="" class="modal_form" method="post">
+        {% csrf_token %}
+        <div style="display: flex; justify-content: space-between">
+            <h1 style="width: 70%">Запись на бесплатную тренировку</h1>
+            <button type="button" class="btn_close" id="close_form">X</button>
+        </div>
+        {{ form.phone|add_class:"pop_up_field" }}
+        {{ form.email|add_class:"pop_up_field" }}
+        {{ form.description|add_class:"pop_up_field" }}
+        <button class="button_pop_up_field">Отправить</button>
+    </form>
+</div>
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="footer_descr">
+        <h1 style="color: white">Симбирские Львы</h1>
+        <p style="color: grey">Детская футбольная школа в Ульяновске. Мы предоставляем качественный уровень тренировок и
+            прививаем любовь к
+            футболу.</p>
+    </div>
+    <div class="footer_contacts">
+        <h1 style="color: white">Контакты</h1>
+        <div style="display: flex; flex-direction: column;">
+            <p style="color: grey"><img src="{% static 'img/geo.png' %}" alt="" width="15em">&nbsp&nbspг. Ульяновск, ул.
+                Проспект
+                Гая, 15</p>
+            <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                    src="{% static 'img/phone.png' %}" alt=""
+                    width="15em">&nbsp&nbsp+8 (904) 194 94 74</a>
+            <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                    src="{% static 'img/skype.png' %}" alt=""
+                    width="15em">&nbsp&nbspsimlion</a>
+            <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                    src="{% static 'img/mail.png' %}" alt=""
+                    width="15em">&nbsp&nbspsimlion@inbox.com</a>
+        </div>
+    </div>
+    <div class="footer_form">
+        <h1 style="color: white; margin-bottom: 0">Обратная связь</h1>
+        <form action="" class="contact_form_footer" method="post">
+            {% csrf_token %}
+            {{ form.phone|add_class:"footer_field" }}
+            {{ form.email|add_class:"footer_field" }}
+            {{ form.description|add_class:"footer_field" }}
+            <button class="button_footer">Отправить</button>
+        </form>
+    </div>
+
+</footer>
+{% block block_script %}
+{% endblock %}
+<script>
+    document.querySelectorAll('.send_application').forEach(element => {
+    element.addEventListener('click', function() {
+        document.getElementById("my_modal").classList.add("open")
+    })
+})
+    document.getElementById("close_form").addEventListener("click", function () {
+        document.getElementById("my_modal").classList.remove("open")
+    })
+</script>
+</body>
+</html>

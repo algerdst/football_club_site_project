@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <div class="about_school contacts">
+        <h1 style="font-size: 3.5em; font-weight: 700; color: white"> Контакты</h1>
+    </div>
+    <div class="contacts_block">
+        <div class="contact_info">
+            <h1 style="text-align: center">Симбирские Львы Kid's</h1>
+            <h3 style="text-align: center"> График работы: вт-чт с 16.00 до 20.00</h3>
+            <div style="display: flex; flex-direction: column;">
+                <p style="color: grey"><img src="{% static 'img/geo.png' %}" alt="" width="15em">&nbsp&nbspг.
+                    Ульяновск, ул.
+                    Проспект
+                    Гая, 15</p>
+                <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                        src="{% static 'img/phone.png' %}" alt=""
+                        width="15em">&nbsp&nbsp+8 (904) 194 94 74</a>
+                <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                        src="{% static 'img/skype.png' %}" alt=""
+                        width="15em">&nbsp&nbspsimlion</a>
+                <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+                        src="{% static 'img/mail.png' %}" alt=""
+                        width="15em">&nbsp&nbspsimlion@inbox.com</a>
+            </div>
+        </div>
+        <div class="contact_map">
+            <div style="position:relative;overflow:hidden;"><a
+                    href="https://yandex.by/maps/195/ulyanovsk/?utm_medium=mapframe&utm_source=maps"
+                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Ульяновск</a><a
+                    href="https://yandex.by/maps/195/ulyanovsk/house/prospekt_gaya_15/YEEYdQRgTUIBQFtufX53eX5hYA==/?ll=48.330476%2C54.268224&utm_medium=mapframe&utm_source=maps&z=16.48"
+                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Проспект Гая, 15 — Яндекс Карты</a>
+                <iframe src="https://yandex.by/map-widget/v1/?ll=48.330476%2C54.268224&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Nzc1MTcwNRI90KDQvtGB0YHQuNGPLCDQo9C70YzRj9C90L7QstGB0LosINC_0YDQvtGB0L_QtdC60YIg0JPQsNGPLCAxNSIKDWhSQUIVqRJZQg%2C%2C&z=16.48"
+                        width="100%" height="400" frameborder="1" allowfullscreen="true"
+                        style="position:relative;border: 0;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="contact_with_us_form">
+        <h1 style="font-size: 3em; color: white">Напишите нам</h1>
+        <h2 style="color: white">Мы всегда готовы ответить на ваши вопросы</h2>
+        <form action="" class="contact_form" method="post">
+            {% csrf_token %}
+            {{ form.name|add_class:"form_field" }}
+            {{ form.phone|add_class:"form_field" }}
+            {{ form.email|add_class:"form_field" }}
+            {{ form.description|add_class:"form_field" }}
+            <button>Отправить</button>
+        </form>
+    </div>
+{% endblock %}
