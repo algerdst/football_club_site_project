@@ -1,6 +1,5 @@
-from django.conf import settings
 from django.db import models
-from django.core.mail import send_mail
+
 
 class Coach(models.Model):
     name = models.CharField(max_length=50, null=True, verbose_name='Ф.И.О')

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Симбирские Львы Kid`s</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     {% block block_for_css %}
@@ -17,12 +17,12 @@
 <body>
 <header>
     <a href="">г. Ульяновск, ул. Проспект Гая, 15</a>
-    <a href="">+8 (904) 194 94 74</a>
+    <a href="tel:+8 904 194 94 74">+8 (904) 194 94 74</a>
     <a href="">simlion@inbox.com</a>
     <a href="https://vk.com/simlionkids"><img src="{% static 'img/vk.png' %}" alt="" width="20em"></a>
 </header>
 <nav>
-    <a href="{% url 'home' %}"><img src="{% static 'img/logo.JPG' %}" alt="" width="350em"></a>
+    <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="" width="350em"></a>
     <div class="nav_bar">
         <a href="{% url 'home' %}" class="nav_a">ГЛАВНАЯ</a>
         <a href="{% url 'about' %}" class="nav_a">О ШКОЛЕ</a>
@@ -59,7 +59,7 @@
             <p style="color: grey"><img src="{% static 'img/geo.png' %}" alt="" width="15em">&nbsp&nbspг. Ульяновск, ул.
                 Проспект
                 Гая, 15</p>
-            <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img
+            <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href="tel:+8 904 194 94 74"><img
                     src="{% static 'img/phone.png' %}" alt=""
                     width="15em">&nbsp&nbsp+8 (904) 194 94 74</a>
             <a style="color: #838b98; font-weight: 600; padding-bottom: 1em" href=""><img

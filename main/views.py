@@ -22,6 +22,7 @@ def index(request):
                 fail_silently=False,
             )
             messages.success(request, 'Ваша заявка успешно отправлена')
+            form = SignForm()
     else:
         form = SignForm()
     data = {
@@ -48,6 +49,7 @@ def about(request):
                 fail_silently=False,
             )
             messages.success(request, 'Ваша заявка успешно отправлена')
+            form = SignForm()
     else:
         form = SignForm()
     data = {
@@ -77,6 +79,7 @@ def trains(request):
                 fail_silently=False,
             )
             messages.success(request, 'Ваша заявка успешно отправлена')
+            form = SignForm()
     else:
         form = SignForm()
     data = {
@@ -103,6 +106,7 @@ def contacts(request):
                 fail_silently=False,
             )
             messages.success(request, 'Ваша заявка успешно отправлена')
+            form = SignForm()
     else:
         form = SignForm()
     data = {

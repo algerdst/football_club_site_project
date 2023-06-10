@@ -5,12 +5,11 @@ from .models import Sign_for_class
 
 class SignForm(forms.ModelForm):
     name = forms.CharField(required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
+                           widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
     phone = forms.IntegerField(
-        widget=forms.TextInput(attrs={'placeholder': '+7 123 45 77'})
-                               )
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    description = forms.CharField(required=False, widget=forms.Textarea(
+        widget=forms.TextInput(attrs={'placeholder': '+7 123 45 77'}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    description = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'placeholder': 'Комментарий (необязательно)'}))
 
     class Meta:
