@@ -40,6 +40,7 @@ button:hover {
     margin-bottom: 1em;
     height: 3.5em;
     width: 100%;
+    padding: 10px;
 }
 
 :focus.footer_field{

@@ -31,7 +31,13 @@
     </div>
 </nav>
 <div class="modal_window" id="my_modal">
-    <form action="" class="modal_form" method="post">
+{#    const form = document.getElementById("formid");#}
+{#    form.addEventListener('submit', (e) => {#}
+{#    e.preventDefault();#}
+{#    e.target.reset();#}
+{#    })#}
+
+    <form action="" class="modal_form" method="post" id="formid">
         {% csrf_token %}
         <div style="display: flex; justify-content: space-between">
             <h1 style="width: 70%">Запись на бесплатную тренировку</h1>
@@ -74,7 +80,7 @@
         <h1 style="color: white; margin-bottom: 0">Обратная связь</h1>
         <form action="" class="contact_form_footer" method="post">
             {% csrf_token %}
-            {{ form.phone|add_class:"footer_field" }}
+            {{ form.phone|add_class:"footer_field"}}
             {{ form.email|add_class:"footer_field" }}
             {{ form.description|add_class:"footer_field" }}
             <button class="button_footer">Отправить</button>

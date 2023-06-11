@@ -26,18 +26,6 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
-class News(models.Model):
-    title = models.CharField(max_length=50, null=True, verbose_name='Название')
-    image = models.ImageField(upload_to='news_pics', default='default_new', verbose_name='Изображение')
-    description = models.TextField(max_length=5000, null=True, verbose_name='Описание')
-
-    class Meta:
-        verbose_name = 'Новость'
-        verbose_name_plural = 'Новости клуба'
-
-    def __str__(self):
-        return self.title
-
 
 # Модель заявки для записи на занятие
 class Sign_for_class(models.Model):

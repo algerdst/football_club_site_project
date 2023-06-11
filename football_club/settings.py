@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "users",
     "main",
     'widget_tweaks'
 ]
@@ -52,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "football_club.urls"
+
 
 TEMPLATES = [
     {
@@ -129,13 +129,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# Users
-
-LOGIN_REDIRECT_URL = 'home'
-LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = 'home'
-AUTH_USER_MODEL = 'users.User'
 
 #SendingEmail
 

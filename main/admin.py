@@ -1,14 +1,9 @@
 from django.contrib import admin
-from .models import Coach, News, Sign_for_class, About_School, Trains, Student, Gallery, Schedule
+from .models import Coach, Sign_for_class, About_School, Trains, Student, Gallery, Schedule
 
 
 @admin.register(Coach)
 class AdminCoach(admin.ModelAdmin):
-    pass
-
-
-@admin.register(News)
-class AdminNews(admin.ModelAdmin):
     pass
 
 
